@@ -10,11 +10,6 @@ import auto_finish as af
 
 import inquirer
 
-def main():
-	lg.print_logo()
-	ct.create_table()
-	run_program()
-
 def run_program():
 	while True:
 		print("Choose what to do")
@@ -40,7 +35,7 @@ def run_program():
 			break
 		af.auto_fin()
 		
-# if __name__ == "__main__":
-# 	lg.print_logo()
-# 	ct.create_table()
-# 	run_program()
+if __name__ == "__main__":
+	lg.print_logo()
+	ct.create_table()
+	run_program()
