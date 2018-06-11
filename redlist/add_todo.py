@@ -14,6 +14,7 @@ def add_todo():
 	cur = conn.cursor()
 
 	sql = "insert into todo (what, due, importance, category, finished) values (?, ?, ?, ?, ?)"
+	sql_note = "insert into note (note_text) values ?"
 
 	while True:
 		what = str(input("What? "))
@@ -44,9 +45,12 @@ def add_todo():
 	if category == '':
 		category = 'GENERAL'
 
+	note = str(input("Note? "))
+
 	data = [what, due, int(importance), category, 'n']
 
 	cur.execute(sql, data)
+	cur.execute(sql2, [note])
 	conn.commit()
 
 	print("")

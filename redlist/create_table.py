@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import sqlite3
 from pathlib import Path
 
@@ -7,7 +7,7 @@ conn = sqlite3.connect(home_dir + "/task.db")
 cur = conn.cursor()
 
 def create_table():
-    
+
     table_create_sql = """create table if not exists todo (
             id integer primary key autoincrement,
             what text not null,
@@ -16,5 +16,10 @@ def create_table():
             category text not null,
             finished text not null); """
     cur.execute(table_create_sql)
+
+    table_create_note_sql = """create table if not exists note (
+            note_id integer primary key autoincrement,
+            note_text text); """
+    cur.execute(table_create_note_sql)
     conn.commit()
     conn.close()
