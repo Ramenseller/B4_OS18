@@ -4,4 +4,4 @@ python:
 install:
   - pip3 install redlist
 script:
-  - redlist
+  - python3 main.py
