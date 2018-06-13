@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Goodkorning/B4_OS18.svg?branch=master)](https://travis-ci.org/Goodkorning/B4_OS18)
+[![GitHub license](https://img.shields.io/github/license/Ramenseller/RedList.svg)](https://github.com/Ramenseller/RedList/blob/master/LICENSE)
+
 * This is README file for B-4
 
 # RedList
@@ -30,6 +33,44 @@ pip3 install redlist
    - Enter 'what' you want to delete
 
 5. Want to know what category is in list? Press 'c'
+
+### Using args
+Usage :
+```
+redlist [options]
+```
+
+Options :
+```
+--version
+```
+show program's version number and exit
+```
+-h
+--help
+```
+show this help message and exit
+```
+-a [what] [due(yyyy-mm-dd hh:mm:ss)]
+```
+add a new todo
+```
+-l what || due || importance || category [category]
+```
+list todos by option
+```
+-m [org_what] [what] [due(yyyy-mm-dd hh:mm:ss)] [importance(0~5)] [category] [finishied(y/n)]
+```
+modify the todo
+```
+-d [what]
+```
+delete the todo
+```
+-c
+```
+show categories
+
 
 
 ## Bulit With
