@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/Goodkorning/B4_OS18.svg?branch=master)](https://travis-ci.org/Goodkorning/B4_OS18)
 
-[![GitHub license](https://img.shields.io/github/license/Ramenseller/RedList.svg)](https://github.com/Ramenseller/RedList/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/licence-MIT-blue.svg
+)](https://github.com/Ramenseller/RedList/blob/master/LICENSE)
 
 
 * This is README file for B-4
