@@ -1,0 +1,20 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip3 install redlist
+  - pip3 install inquirer
+  - pip3 install colorama
+  - pip3 install prettytable
+script:
+  - redlist -h
+  - redlist --version
+  - redlist -a what1 2019-12-12 12:12:12 2 Test
+  - redlist -l what
+  - redlist -l due
+  - redlist -l importance
+  - redlist -a what2 2020-12-12 12:12:12 2 Test
+  - redlist -m what2 what3 2020-12-12 12:00:00 3 Test n
+  - redlist -c
+  - redlist -l category Test
+  - redlist -d what1

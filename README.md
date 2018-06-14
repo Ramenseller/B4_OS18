@@ -1,6 +1,6 @@
 [![GitHub license](https://img.shields.io/badge/licence-MIT-blue.svg
 )](https://github.com/Ramenseller/RedList/blob/master/LICENSE)
-
+[![Build Status](https://travis-ci.org/Ramenseller/RedList.svg?branch=master)](https://travis-ci.org/Ramenseller/RedList)
 
 * This is README file for B-4
 

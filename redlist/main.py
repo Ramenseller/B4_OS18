@@ -52,7 +52,7 @@ def cmd_line():
 	"""Usr inputs option among -a(add todo), -l(list todo), -m(modify todo), -d(delete todo), -c(show category)"""
 
 	usage = "Usage: %prog [options]"
-	parser = OptionParser(usage=usage, version="%prog 0.0.5")
+	parser = OptionParser(usage=usage, version="%prog 0.0.8")
 	parser.add_option("-a", dest="add", action='store', type=str, default=False, help="add a new todo",
 						metavar="[what] [due(yyyy-mm-dd hh:mm:ss)] [importance(0~5)] [category]")
 	parser.add_option("-l", dest="list", action='store', type=str, default=False, help="list todos by option",
@@ -71,11 +71,11 @@ def cmd_line():
 		run_program()
 
 	if options.add:
-		sql = "insert into todo (what, due, importance, category, finished) values (?, ?, ?, ?, ?)"
 		what, due, importance, category = options.add, args[0]+" "+args[1], args[2], args[3]
 		if not dc.isdue(due):
 			print('Invaild input! Please check your input(yyyy-mm-dd hh:mm:ss)')
 			exit()
+		sql = "insert into todo (what, due, importance, category, finished) values (?, ?, ?, ?, ?)"
 		data = [what, due, importance, category, "n"]
 		cur.execute(sql, data)
 		print("ADDED")
@@ -108,6 +108,9 @@ def cmd_line():
 		chk_is_there(modify_data)
 
 		what, due, importance, category, finished = args[0], args[1]+" "+args[2], args[3], args[4], args[5]
+		if not dc.isdue(due):
+			print('Invaild input! Please check your input(yyyy-mm-dd hh:mm:ss)')
+			exit()
 		sql = "update todo set what = ?, due = ?, importance = ?, category = ?, finished = ? where what = ?"
 		cur.execute(sql, [what, due, int(importance), category, finished, modify_data])
 		print("MODIFIED")
@@ -120,7 +123,7 @@ def cmd_line():
 
 		del_record = "delete from todo where what = ?"
 		cur.execute(del_record, [delete_data])
-		print("DELETED")
+		print("DELETED " + '\''+ delete_data + '\'')
 		conn.commit()
 
 	if options.category:

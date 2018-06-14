@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name = 'redlist',
-    version = '0.0.5',
+    version = '0.0.8',
     description = 'A simple schedule managing cli app',
     long_description = long_description,
     long_description_content_type='text/markdown',
@@ -28,7 +28,7 @@ setup(
     install_requires = ['inquirer', 'prettytable', 'colorama'],
     entry_points = {
         'console_scripts': [
-            'RedList=redlist.main:main',
+            'redlist=redlist.main:main',
         ]
     }
 )
